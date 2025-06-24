@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee5cec81053b674fb3a57ae57f9916d, type: 3}
+  m_Name: IntroDialogue
+  m_EditorClassIdentifier: 
+  sentences:
+  - Ah, welcome, welcome! Thank you so much for deciding to help me fend off the
+    toasts!
+  - "It\u2019s been hard since the toasts started the plague, but we\u2019ve been
+    working together to push them back."
+  - "War is hard fought and unpredictable, so we never know when it\u2019ll end,
+    but having you around is sure to make things easy!"
+  - "Start level one when you're ready and we\u2019ll begin your training."
+  characterName: Princess Peaberry
+  characterSprite: {fileID: 0}
