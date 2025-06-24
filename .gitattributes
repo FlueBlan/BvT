@@ -1,3 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 IntroCinematic.mp4 filter=lfs diff=lfs merge=lfs -text
+IntroCinematic.mp4.meta filter=lfs diff=lfs merge=lfs -text
