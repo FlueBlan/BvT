@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b688acbeb65a9ce479a31400944d1599, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b688acbeb65a9ce479a31400944d1599, type: 3}
       propertyPath: m_LocalPosition.y
@@ -116,7 +116,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b688acbeb65a9ce479a31400944d1599, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6276556220257443147}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b688acbeb65a9ce479a31400944d1599, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3019108931293230644}
   m_SourcePrefab: {fileID: 100100000, guid: b688acbeb65a9ce479a31400944d1599, type: 3}
+--- !u!23 &2248630022761934765 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1684107799473140416, guid: b688acbeb65a9ce479a31400944d1599, type: 3}
+  m_PrefabInstance: {fileID: 8616624096902423277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8887022803459350460 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b688acbeb65a9ce479a31400944d1599, type: 3}
@@ -158,8 +166,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 7, z: 5}
-  m_Center: {x: -2, y: -0.3, z: -1}
+  m_Size: {x: 3.2831626, y: 5.91522, z: 4.3282394}
+  m_Center: {x: -1.5231886, y: 0.06328361, z: -0.803262}
 --- !u!114 &-5058634748180520305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,3 +210,18 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &3019108931293230644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887022803459350460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2fa1428e4eece4385715ba287a14f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 0, g: 0, b: 0, a: 1}
+  flashDuration: 0.1
+  rend: {fileID: 2248630022761934765}

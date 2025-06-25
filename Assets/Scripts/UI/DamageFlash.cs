@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageFlash : MonoBehaviour
 {
-    public Color flashColor = Color.white;
+    public Color flashColor;
     public float flashDuration = 0.1f;
     public Renderer rend;
     private Material mat;

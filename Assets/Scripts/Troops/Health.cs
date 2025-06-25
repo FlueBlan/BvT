@@ -10,8 +10,6 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        
-
     }
 
 
@@ -46,6 +44,4 @@ public class Health : MonoBehaviour
         Debug.Log($"{gameObject.name} has died.");
         Destroy(gameObject);
     }
-
-
 }
