@@ -88,6 +88,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4638940855548749714}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2138428010558446891}
   m_SourcePrefab: {fileID: 100100000, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
 --- !u!1 &1657724911775996567 stripped
 GameObject:
@@ -159,3 +162,23 @@ MonoBehaviour:
   health: 100
   deathEffect: {fileID: 7869121764872009968, guid: cd6590232ddd0304ebcb20235b9b2e10, type: 3}
   deathSFX: {fileID: 8300000, guid: 9657b4cf8371fb94d8b7d3dc28a7070e, type: 3}
+--- !u!114 &2138428010558446891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657724911775996567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2fa1428e4eece4385715ba287a14f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.1
+  rend: {fileID: 2648193838479651081}
+--- !u!23 &2648193838479651081 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4683669308469848369, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
+  m_PrefabInstance: {fileID: 1999604659046868934}
+  m_PrefabAsset: {fileID: 0}

@@ -5,11 +5,17 @@ public class EnemyHealth : MonoBehaviour
     public float health = 100f;
     public GameObject deathEffect;
     public AudioClip deathSFX;
+    private DamageFlash df;
 
+    void Awake()
+    {
+        df = GetComponent<DamageFlash>();
+    }
     public void TakeDamage(float damage)
     {
         Debug.Log($"{gameObject.name} took {damage} damage. Remaining: {health - damage}");
         health -= damage;
+        df.Flash(); // Flash the material to indicate damage
 
         if (health <= 0)
         {

@@ -47,7 +47,8 @@ public class WaveSpawner_Level3 : MonoBehaviour
             return;
         }
 
-        if (waveNumber > maxWaves) return;
+        //Debugging, add in later
+        //if (waveNumber > maxWaves) return;
 
         if (countdown <= 0f && !waveInProgress)
         {
@@ -119,10 +120,9 @@ public class WaveSpawner_Level3 : MonoBehaviour
         currentWave = waveNumber;
         waveNumber++;
 
-        if (waveNumber > maxWaves)
-        {
-            finalWaveSpawned = true;
-        }
+        //Debugging, add in later
+        //if (waveNumber > maxWaves)
+        //    finalWaveSpawned = true;
 
         yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("Enemy").Length == 0);
         waveInProgress = false;
@@ -153,6 +153,49 @@ public class WaveSpawner_Level3 : MonoBehaviour
         finalWaveSpawned = false;
         enabled = true;
     }
+
+    #region UI Debugging
+    //Debugging properties
+    public void SpawnToastCheat()
+    {
+    // Use the same logic as the first enemy in a wave
+    int row = 0;
+    int column = 0;
+
+    float spawnX = spawnPoint.position.x - (row * spacingX);
+    float spawnZ = 0 + (column * spacingZ);
+    float spawnY = 0f;
+
+    Vector3 spawnPos = new Vector3(spawnX, spawnY, spawnZ);
+    Vector3 targetPos = new Vector3(endPoint.position.x - (row * spacingX), spawnY, spawnZ);
+
+    GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+
+    EnemyMovement moveScript = enemy.GetComponent<EnemyMovement>();
+    if (moveScript != null)
+        moveScript.SetTarget(targetPos);
+    }
+
+    public void SpawnBurntToastCheat()
+{
+    // Use the same logic as the first enemy in a wave
+    int row = 0;
+    int column = 0;
+
+    float spawnX = spawnPoint.position.x - (row * spacingX);
+    float spawnZ = 0 + (column * spacingZ);
+    float spawnY = 0f;
+
+    Vector3 spawnPos = new Vector3(spawnX, spawnY, spawnZ);
+    Vector3 targetPos = new Vector3(endPoint.position.x - (row * spacingX), spawnY, spawnZ);
+
+    GameObject enemy = Instantiate(burntToastPrefab, spawnPos, Quaternion.identity);
+
+    EnemyMovement moveScript = enemy.GetComponent<EnemyMovement>();
+    if (moveScript != null)
+        moveScript.SetTarget(targetPos);
+    }
+    #endregion
 
     public int CurrentWave => waveNumber;
     public bool IsSpawning => countdown <= 0f && waveNumber <= maxWaves;

@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class BurntToast : MonoBehaviour
 {
+    private DamageFlash df;
     public float shieldHealth = 30f;
     public float actualHealth = 100f;
     private bool shieldBroken = false;
 
+    void Awake()
+    {
+        df = GetComponent<DamageFlash>();
+    }
     public void TakeDamage(float amount)
     {
         if (!shieldBroken)
@@ -20,6 +25,8 @@ public class BurntToast : MonoBehaviour
         }
 
         actualHealth -= amount;
+        df.Flash(); // Flash the material to indicate damage
+        
         if (actualHealth <= 0)
         {
             Die();

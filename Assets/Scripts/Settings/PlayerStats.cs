@@ -145,6 +145,12 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine(RestartAfterDelay());
     }
 
+    //Debugging, remove later
+    public void AddMoneyNow(int amount)
+    {
+        Money += amount;
+        Debug.Log($"Money added: {amount}. Total Money: {Money}");
+    }
     public void OnMenuButtonPressed()
     {
         GoToMainMenu();
