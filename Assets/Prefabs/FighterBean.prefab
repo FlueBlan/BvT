@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7032039cd7a5bc418c7ec802b1ebfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 250
+  currentHealth: 250
   deathSound: {fileID: 8300000, guid: 915a935805e4e554a96164c5c0c8f233, type: 3}
 --- !u!54 &-6276556220257443147
 Rigidbody:

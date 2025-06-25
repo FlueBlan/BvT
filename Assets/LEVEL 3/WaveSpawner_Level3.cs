@@ -184,12 +184,12 @@ public class WaveSpawner_Level3 : MonoBehaviour
 
     float spawnX = spawnPoint.position.x - (row * spacingX);
     float spawnZ = 0 + (column * spacingZ);
-    float spawnY = 0f;
+    float spawnY = 10f;
 
     Vector3 spawnPos = new Vector3(spawnX, spawnY, spawnZ);
     Vector3 targetPos = new Vector3(endPoint.position.x - (row * spacingX), spawnY, spawnZ);
 
-    GameObject enemy = Instantiate(burntToastPrefab, spawnPos, Quaternion.identity);
+    GameObject enemy = Instantiate(burntToastPrefab, spawnPos, Quaternion.Euler(0, 180, 0));
 
     EnemyMovement moveScript = enemy.GetComponent<EnemyMovement>();
     if (moveScript != null)
