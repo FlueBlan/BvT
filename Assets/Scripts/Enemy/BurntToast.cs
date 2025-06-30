@@ -3,8 +3,8 @@ using UnityEngine;
 public class BurntToast : MonoBehaviour
 {
     private DamageFlash df;
-    public float shieldHealth = 30f;
-    public float actualHealth = 100f;
+    public float shieldHealth = 150f;
+    public float actualHealth = 200f;
     private bool shieldBroken = false;
 
     void Awake()
@@ -16,6 +16,7 @@ public class BurntToast : MonoBehaviour
         if (!shieldBroken)
         {
             shieldHealth -= amount;
+            Debug.Log("Hit");
             if (shieldHealth <= 0)
             {
                 shieldBroken = true;

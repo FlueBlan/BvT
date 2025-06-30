@@ -176,12 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 30
-  fireRate: 1
+  fireRate: 2
   enemyTag: Enemy
   turnSpeed: 10
   orbPrefab: {fileID: 7249430888887282093, guid: 29b0885ffe42c8c418af95e806559e25, type: 3}
   firePoint: {fileID: 8669918704488044914}
-  damage: 15
+  damage: 10
   shootSound: {fileID: 8300000, guid: ece86e4f417f73a4c8eb89ceb772287e, type: 3}
 --- !u!65 &-2217447785830954250
 BoxCollider:

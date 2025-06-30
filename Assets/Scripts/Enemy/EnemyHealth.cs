@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    // this script is the only script that calls TakeDamage
     public float health = 100f;
     public GameObject deathEffect;
     public AudioClip deathSFX;
     private DamageFlash df;
-
     void Awake()
     {
         df = GetComponent<DamageFlash>();

@@ -13,6 +13,7 @@ public class Shop : MonoBehaviour
 
     private BuildManager buildManager;
 
+    // Script only incorporates the UI for the shop and calls the BuildManager, not handling the currency or purchasing logic directly.
     void Start()
     {
         buildManager = BuildManager.instance;

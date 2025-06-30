@@ -18,11 +18,13 @@ public class BuildManager : MonoBehaviour
 
     private BeanShooterBlueprint turretToBuild;
 
+    // Reference to check if a turret can be built
     public bool CanBuild => turretToBuild != null;
     public bool HasMoney => turretToBuild != null && PlayerStats.Money >= turretToBuild.cost;
 
     void Awake()
     {
+        //Check if BuilManagaer already exists
         if (instance != null)
         {
             Debug.LogError("More than one BuildManager in the scene!");
@@ -45,13 +47,16 @@ public class BuildManager : MonoBehaviour
             return;
         }
 
+        //If both checks pass, build the turret
         PlayerStats.Money -= turretToBuild.cost;
+        //this is not where the turret is in blueprint
         Vector3 spawnPos = node.GetBuildPosition() + turretToBuild.spawnOffset;
         Quaternion rotation = Quaternion.Euler(turretToBuild.rotationEuler);
 
         GameObject turret = Instantiate(turretToBuild.prefab, spawnPos, rotation);
         node.turret = turret;
 
+        //Special effects for building turrets
         if (buildEffect != null)
         {
             GameObject effect = Instantiate(buildEffect, spawnPos + Vector3.up * 0.5f, Quaternion.identity);
