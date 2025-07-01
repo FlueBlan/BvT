@@ -7,7 +7,7 @@ public class MoneyUi : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip coinCollectSound;
 
-    private int lastMoneyAmount;
+    private float lastMoneyAmount;
 
     void Start()
     {

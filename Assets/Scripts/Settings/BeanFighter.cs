@@ -38,9 +38,9 @@ public class BeanFighter : MonoBehaviour
         {
             SoundManager.instance.PlaySound(punchSound);
             // Attack the enemy
-            EnemyHealth targetHealth = target.GetComponent<EnemyHealth>()
-                                     ?? target.GetComponentInParent<EnemyHealth>()
-                                     ?? target.GetComponentInChildren<EnemyHealth>();
+            BaseEnemyHealth targetHealth = target.GetComponent<BaseEnemyHealth>()
+                                     ?? target.GetComponentInParent<BaseEnemyHealth>()
+                                     ?? target.GetComponentInChildren<BaseEnemyHealth>();
 
             if (targetHealth != null)
             {

@@ -111,10 +111,13 @@ PrefabInstance:
       addedObject: {fileID: 7485679312955191777}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 71e048aae592a5449adbbc5df0793fe2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5623754373456221380}
+      addedObject: {fileID: 5632723520156082475}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 71e048aae592a5449adbbc5df0793fe2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5632723520156082475}
+      addedObject: {fileID: 8275284720635135421}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 71e048aae592a5449adbbc5df0793fe2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5864893967020472218}
   m_SourcePrefab: {fileID: 100100000, guid: 71e048aae592a5449adbbc5df0793fe2, type: 3}
 --- !u!4 &6070756062461252811 stripped
 Transform:
@@ -160,21 +163,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 10, z: 7}
   m_Center: {x: 0, y: 5, z: 0}
---- !u!114 &5623754373456221380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6878255391012884081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1fcb8880784429449cdf0a2c50e22c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  deathEffect: {fileID: 7869121764872009968, guid: 2c76f96d904d3e842857dbb3de929e70, type: 3}
-  deathSFX: {fileID: 8300000, guid: 9657b4cf8371fb94d8b7d3dc28a7070e, type: 3}
 --- !u!114 &5632723520156082475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +178,38 @@ MonoBehaviour:
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashDuration: 0.1
   rend: {fileID: 7833257906332067311}
+--- !u!114 &8275284720635135421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878255391012884081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4eb05e9452e65945b94ff68a6b5b9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  reward: 25
+  deathEffect: {fileID: 0}
+  deathSFX: {fileID: 0}
+--- !u!114 &5864893967020472218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878255391012884081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fcb8880784429449cdf0a2c50e22c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  reward: 25
+  deathEffect: {fileID: 0}
+  deathSFX: {fileID: 0}
 --- !u!23 &7833257906332067311 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -4683669308469848369, guid: 71e048aae592a5449adbbc5df0793fe2, type: 3}

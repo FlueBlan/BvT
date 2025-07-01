@@ -180,10 +180,13 @@ PrefabInstance:
       addedObject: {fileID: -3643041000425570535}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -4638940855548749714}
+      addedObject: {fileID: 2138428010558446891}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2138428010558446891}
+      addedObject: {fileID: 9079677306823031001}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2753018923897961857}
   m_SourcePrefab: {fileID: 100100000, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
 --- !u!1 &1657724911775996567 stripped
 GameObject:
@@ -202,8 +205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cb8836dd7c9d44282c10cbffd175f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  reward: 25
+  deathEffect: {fileID: 0}
+  deathSFX: {fileID: 0}
   shieldHealth: 150
-  actualHealth: 200
 --- !u!65 &4380194225962217037
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -238,21 +244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
---- !u!114 &-4638940855548749714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657724911775996567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1fcb8880784429449cdf0a2c50e22c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  deathEffect: {fileID: 7869121764872009968, guid: cd6590232ddd0304ebcb20235b9b2e10, type: 3}
-  deathSFX: {fileID: 8300000, guid: 9657b4cf8371fb94d8b7d3dc28a7070e, type: 3}
 --- !u!114 &2138428010558446891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +259,39 @@ MonoBehaviour:
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashDuration: 0.1
   rend: {fileID: 2648193838479651081}
+--- !u!114 &9079677306823031001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657724911775996567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4eb05e9452e65945b94ff68a6b5b9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  reward: 50
+  deathEffect: {fileID: 0}
+  deathSFX: {fileID: 0}
+--- !u!114 &2753018923897961857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657724911775996567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cb8836dd7c9d44282c10cbffd175f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  reward: 50
+  deathEffect: {fileID: 0}
+  deathSFX: {fileID: 0}
+  shieldHealth: 150
 --- !u!4 &2038649222605635629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}

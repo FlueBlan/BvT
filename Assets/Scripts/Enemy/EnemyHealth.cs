@@ -1,46 +1,19 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : BaseEnemyHealth
 {
-    // this script is the only script that calls TakeDamage
-    public float health = 100f;
-    public GameObject deathEffect;
-    public AudioClip deathSFX;
-    private DamageFlash df;
+    private float curReward = 25f;
+    private BaseEnemyHealth beh;
+    
     void Awake()
     {
-        df = GetComponent<DamageFlash>();
+        beh = GetComponent<BaseEnemyHealth>();
     }
-    public void TakeDamage(float damage)
+    protected override void Die()
     {
-        Debug.Log($"{gameObject.name} took {damage} damage. Remaining: {health - damage}");
-        health -= damage;
-        df.Flash(); // Flash the material to indicate damage
+        beh.reward = curReward;
+        base.Die();
 
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        PlayerStats.Money += 25;
-
-        // Play death sound
-        if (deathSFX != null)
-        {
-            SoundManager.instance.PlaySound(deathSFX);
-        }
-
-        // Visual effect
-        if (deathEffect != null)
-        {
-            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 5f);
-            FindFirstObjectByType<TutorialManager>()?.OnToastDefeated();
-        }
-
-        Destroy(gameObject);
+        FindFirstObjectByType<TutorialManager>()?.OnToastDefeated();
     }
 }

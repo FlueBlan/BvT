@@ -1,17 +1,10 @@
 using UnityEngine;
 
-public class BurntToast : MonoBehaviour
+public class BurntToast : BaseEnemyHealth
 {
-    private DamageFlash df;
     public float shieldHealth = 150f;
-    public float actualHealth = 200f;
     private bool shieldBroken = false;
-
-    void Awake()
-    {
-        df = GetComponent<DamageFlash>();
-    }
-    public void TakeDamage(float amount)
+    public override void TakeDamage(float amount)
     {
         if (!shieldBroken)
         {
@@ -24,19 +17,7 @@ public class BurntToast : MonoBehaviour
             }
             return; // Don't deal damage to health yet
         }
-
-        actualHealth -= amount;
-        df.Flash(); // Flash the material to indicate damage
         
-        if (actualHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
-        // Crumbs, death animation, etc.
+        base.TakeDamage(amount);
     }
 }
