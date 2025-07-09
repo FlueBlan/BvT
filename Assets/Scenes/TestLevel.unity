@@ -424,6 +424,14 @@ PrefabInstance:
       propertyPath: cardViewHover
       value: 
       objectReference: {fileID: 56645499}
+    - target: {fileID: 6299942468811852698, guid: 560addc233337534295d6644be4f1a20, type: 3}
+      propertyPath: hoverOffset.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299942468811852698, guid: 560addc233337534295d6644be4f1a20, type: 3}
+      propertyPath: hoverOffset.z
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6673758933154974832, guid: 560addc233337534295d6644be4f1a20, type: 3}
       propertyPath: m_Name
       value: HoverSystem
@@ -817,7 +825,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115915659}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -16}
+  m_LocalPosition: {x: 0, y: 0, z: -36.2}
   m_LocalScale: {x: 0.023119139, y: 0.0041250014, z: 0.050000027}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12445,7 +12453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965104151}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.008164621, z: -0, w: 0.9999667}
   m_LocalPosition: {x: 1179.1001, y: 390.25256, z: 62.030506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12463,7 +12471,7 @@ Transform:
   - {fileID: 741827475}
   - {fileID: 525250995}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.936, z: 0}
 --- !u!225 &1965104153
 CanvasGroup:
   m_ObjectHideFlags: 0
