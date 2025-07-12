@@ -8,6 +8,11 @@ public class CardView : MonoBehaviour
     [SerializeField] private SpriteRenderer cardBG;
     [SerializeField] private GameObject wrapper;
     public Card Card { get; private set; }
+    private BuildManager buildManager;
+    void Start()
+    {
+        buildManager = BuildManager.instance;
+    }
     public void Setup(Card card)
     {
         Card = card;
@@ -24,5 +29,9 @@ public class CardView : MonoBehaviour
     {
         HoverSystem.Instance.Hide();
         wrapper.SetActive(true);
+    }
+    void OnMouseDown()
+    {
+        buildManager.SelectBeanToBuild(Card.BeanPrefab, this);
     }
 }

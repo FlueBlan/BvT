@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Cost>k__BackingField: 200
   <Image>k__BackingField: {fileID: 21300000, guid: c51d5e8bb87d1814892dfc857c4d26f0, type: 3}
+  <beanPrefab>k__BackingField: {fileID: 11400000, guid: 0f2175241d5408a4984288136f0215ef, type: 2}

@@ -434,6 +434,10 @@ MonoBehaviour:
   cardCost: {fileID: 3186042032977079510}
   cardBG: {fileID: 4474583185353182223}
   wrapper: {fileID: 2869494842116583788}
+  wizardBean: {fileID: 11400000, guid: 98ef7f8bcfdd6d14abe3376771f9ef17, type: 2}
+  fighterBean: {fileID: 11400000, guid: b9abe05199c7642478cd27d5d5186ae5, type: 2}
+  healerBean: {fileID: 11400000, guid: 0795e882aee512e49a6015409b87722e, type: 2}
+  popcornBomb: {fileID: 11400000, guid: 0f2175241d5408a4984288136f0215ef, type: 2}
 --- !u!210 &4288892358942691282
 SortingGroup:
   m_ObjectHideFlags: 0

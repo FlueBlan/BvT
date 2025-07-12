@@ -10,6 +10,7 @@ public class BuildManager : MonoBehaviour
     public BeanShooterBlueprint buffbeanPrefab;
     public BeanShooterBlueprint greenBeanPrefab;
     public BeanShooterBlueprint popcornBombPrefab;
+    [SerializeField] private HandView handView;
 
     [Header("Build Effects & SFX")]
     public GameObject buildEffect;
@@ -17,6 +18,7 @@ public class BuildManager : MonoBehaviour
     public AudioClip placeBeanSFX;
 
     private BeanShooterBlueprint turretToBuild;
+    private CardView currentCard;
 
     // Reference to check if a turret can be built
     public bool CanBuild => turretToBuild != null;
@@ -24,7 +26,7 @@ public class BuildManager : MonoBehaviour
 
     void Awake()
     {
-        //Check if BuilManagaer already exists
+        //Check if BuilManager already exists
         if (instance != null)
         {
             Debug.LogError("More than one BuildManager in the scene!");
@@ -65,15 +67,23 @@ public class BuildManager : MonoBehaviour
 
         // Play troop placement SFX
         if (audioSource != null && placeBeanSFX != null)
-        {
             audioSource.PlayOneShot(placeBeanSFX);
-        }
 
+        if (currentCard != null)
+        {
+            handView.RemoveCard(currentCard);
+            Destroy(currentCard.gameObject);
+            currentCard = null;
+        }
         Debug.Log("Built turret: " + turret.name);
         ClearTurretToBuild();
     }
 
-    public void SelectBeanToBuild(BeanShooterBlueprint turret) => turretToBuild = turret;
+    public void SelectBeanToBuild(BeanShooterBlueprint turret, CardView cardView)
+    {
+        turretToBuild = turret;
+        currentCard = cardView;
+    }
     public void ClearTurretToBuild() => turretToBuild = null;
     public BeanShooterBlueprint GetTurretToBuild() => turretToBuild;
 }

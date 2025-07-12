@@ -31,4 +31,9 @@ public class HandView : MonoBehaviour
         }
         yield return new WaitForSeconds(duration);
     }
+    public void RemoveCard(CardView card)
+    {
+        if (cards.Remove(card))
+            StartCoroutine(UpdateCardPositions(0.15f));
+    }
 }
