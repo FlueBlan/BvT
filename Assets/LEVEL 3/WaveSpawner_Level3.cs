@@ -33,6 +33,9 @@ public class WaveSpawner_Level3 : MonoBehaviour
     public bool IsWaveInProgress => waveInProgress;
     public int CurrentWave => waveNumber;
     public bool IsSpawning => countdown <= 0f && waveNumber <= maxWaves;
+    private bool isInBreak = false;
+    [SerializeField] private float breakTime = 5f;
+    private float breakCountdown = 0f;
 
     void Awake()
     {
@@ -44,16 +47,21 @@ public class WaveSpawner_Level3 : MonoBehaviour
         // Check if the game is paused or if time scale is zero
         if (PauseManager2.IsPaused || Time.timeScale == 0f) return;
 
+        if (isInBreak)
+        {
+            breakCountdown -= Time.deltaTime;
+            if (breakCountdown <= 0f)
+                EndBreakAndStartWave();
+            return;
+        }
         // Check if it's the final wave and it that wave has been done
         if (finalWaveSpawned && !levelEnded && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             EndLevel();
             return;
         }
-
-        //Debugging, add in later
         //stops spawning new waves after maxWaves is reached
-        //if (waveNumber > maxWaves) return;
+        if (waveNumber > maxWaves) return;
 
         //Uses a countdown before spawning new waves
         if (countdown <= 0f && !waveInProgress)
@@ -136,6 +144,7 @@ public class WaveSpawner_Level3 : MonoBehaviour
 
         yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("Enemy").Length == 0);
         waveInProgress = false;
+        StartBreak();
     }
 
     //UI for ending the level
@@ -166,6 +175,20 @@ public class WaveSpawner_Level3 : MonoBehaviour
         enabled = true;
     }
 
+    void StartBreak()
+    {
+        isInBreak = true;
+        breakCountdown = breakTime;
+    }
+    public void SkipBreak()
+    {
+        EndBreakAndStartWave();
+    }
+    void EndBreakAndStartWave()
+    {
+        isInBreak = false;
+        countdown = 0f;
+    }
     #region UI Debugging
     //Debugging properties
     public void SpawnToastCheat()
