@@ -60,7 +60,7 @@ public class WaveSpawner_Level3 : MonoBehaviour
             EndLevel();
             return;
         }
-        //stops spawning new waves after maxWaves is reached
+        // Stops spawning new waves after maxWaves is reached
         if (waveNumber > maxWaves) return;
 
         //Uses a countdown before spawning new waves
