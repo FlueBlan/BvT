@@ -14,11 +14,11 @@ public class WaveSpawner : MonoBehaviour
     private float countdown = 2f;
 
     private int waveNumber = 1;
-    private int maxWaves = 5;
+    private int maxWaves = 10;
 
-    private float spacingZ = 10f;
-    private float spacingX = 4f;
-    private int enemiesPerRow = 3;
+    private float spacingZ = 2f;
+    private float spacingX = 2f;
+    private int enemiesPerRow = 5;
 
     private bool burntToastSpawned = false;
     private bool levelEnded = false;
@@ -96,8 +96,8 @@ public class WaveSpawner : MonoBehaviour
             int column = i % enemiesPerRow;
 
             float spawnX = spawnPoint.position.x - (row * spacingX);
-            float spawnZ = 0 + (column * spacingZ);
-            float spawnY = 0f;
+            float spawnZ = spawnPoint.position.z + (column * spacingZ);
+            float spawnY = spawnPoint.position.y;
 
             Vector3 spawnPos = new Vector3(spawnX, spawnY, spawnZ);
             Vector3 targetPos = new Vector3(endPoint.position.x - (row * spacingX), spawnY, spawnZ);
