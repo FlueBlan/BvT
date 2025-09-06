@@ -7,6 +7,7 @@ public class CardView : MonoBehaviour
     [SerializeField] private TMP_Text cardCost;
     [SerializeField] private SpriteRenderer cardBG;
     [SerializeField] private GameObject wrapper;
+    [SerializeField] private float YOffset = 1f;
     public Card Card { get; private set; }
     private BuildManager buildManager;
     void Start()
@@ -22,7 +23,7 @@ public class CardView : MonoBehaviour
     void OnMouseEnter()
     {
         wrapper.SetActive(false);
-        Vector3 pos = new(transform.position.x, -2, 0);
+        Vector3 pos = transform.position + new Vector3(0, YOffset, 0);
         HoverSystem.Instance.Show(Card, pos);
     }
     void OnMouseExit()
