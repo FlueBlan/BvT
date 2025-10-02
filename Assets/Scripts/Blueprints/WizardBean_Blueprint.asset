@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09407d26b4025e43bf2caad4664b2c9, type: 3}
   m_Name: WizardBean_Blueprint
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1571167457341847002, guid: c759ed427cdd67644883a913a399c4f4, type: 3}
+  prefab: {fileID: 5410057090075695374, guid: e119dabe3713ca641878ac9215f25d7f, type: 3}
   cost: 50
   spawnOffset: {x: 0, y: 0.5, z: 0}
-  rotationEuler: {x: 0, y: 2.22, z: 0}
+  rotationEuler: {x: 0, y: 0, z: 0}

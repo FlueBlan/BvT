@@ -434,6 +434,7 @@ MonoBehaviour:
   cardCost: {fileID: 3186042032977079510}
   cardBG: {fileID: 4474583185353182223}
   wrapper: {fileID: 2869494842116583788}
+  YOffset: 1
 --- !u!210 &4288892358942691282
 SortingGroup:
   m_ObjectHideFlags: 0

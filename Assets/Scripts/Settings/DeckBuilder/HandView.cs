@@ -7,16 +7,17 @@ using DG.Tweening;
 public class HandView : MonoBehaviour
 {
     [SerializeField] private SplineContainer sc;
+    [SerializeField] private float cardSpacing = 1f / 4f;
     private readonly List<CardView> cards = new();
     public IEnumerator AddCard(CardView carVe)
     {
         cards.Add(carVe);
         yield return UpdateCardPositions(0.15f);
     }
+    //positions cards along the spline over the given duration
     private IEnumerator UpdateCardPositions(float duration)
     {
         if (cards.Count == 0) yield break;
-        float cardSpacing = 1f / 4f;
         float firstCardPosition = 0.5f - (cards.Count - 1f) * cardSpacing / 2f;
         Spline spline = sc.Spline;
         for (int i = 0; i < cards.Count; i++)

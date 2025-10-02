@@ -11,7 +11,7 @@ public class BeanShooter : MonoBehaviour
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
-    public float turnSpeed = 5f;
+    public float turnSpeed = 3f;
 
     public GameObject orbPrefab;
     public Transform firePoint;
@@ -61,8 +61,8 @@ public class BeanShooter : MonoBehaviour
             {
                 Quaternion lookRotation = Quaternion.LookRotation(direction);
 
-                // Offset to correct for the model’s initial facing direction (X -90, Y 90)
-                lookRotation *= Quaternion.Euler(0, 90f, 0f);
+                // Offset to correct for the modelï¿½s initial facing direction (X -90, Y 90)
+                lookRotation *= Quaternion.Euler(0, 180f, 0f);
 
                 transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
             }
