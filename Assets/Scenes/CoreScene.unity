@@ -2439,11 +2439,11 @@ PrefabInstance:
     - target: {fileID: 5974322117951212068, guid: 9d06a024fc4925e4d8d1f456f7dc7e72, type: 3}
       propertyPath: 'cardDataList.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: fd87ceaa5620cc34fbc66dc63e963000, type: 2}
+      objectReference: {fileID: 11400000, guid: 8cffa7a325c3e074fb2a42007cecd396, type: 2}
     - target: {fileID: 5974322117951212068, guid: 9d06a024fc4925e4d8d1f456f7dc7e72, type: 3}
       propertyPath: 'cardDataList.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: fd87ceaa5620cc34fbc66dc63e963000, type: 2}
     - target: {fileID: 5974322117951212068, guid: 9d06a024fc4925e4d8d1f456f7dc7e72, type: 3}
       propertyPath: 'cardDataList.Array.data[2]'
       value: 

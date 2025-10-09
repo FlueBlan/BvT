@@ -239,6 +239,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6070756062461252811}
     m_Modifications:
+    - target: {fileID: 496558730429157814, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0440344
+      objectReference: {fileID: 0}
+    - target: {fileID: 496558730429157814, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0082432
+      objectReference: {fileID: 0}
+    - target: {fileID: 496558730429157814, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
+      propertyPath: m_Size.z
+      value: 0.46427134
+      objectReference: {fileID: 0}
+    - target: {fileID: 496558730429157814, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
+      propertyPath: m_Center.x
+      value: 0.08676983
+      objectReference: {fileID: 0}
+    - target: {fileID: 496558730429157814, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
+      propertyPath: m_Center.y
+      value: 0.0041217734
+      objectReference: {fileID: 0}
+    - target: {fileID: 496558730429157814, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
+      propertyPath: m_Center.z
+      value: 0.06144384
+      objectReference: {fileID: 0}
     - target: {fileID: 3516528011588846937, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
       propertyPath: m_Name
       value: HitboxHolder
@@ -257,31 +281,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874263591242289778, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9521827
+      value: 0.9548529
       objectReference: {fileID: 0}
     - target: {fileID: 7874263591242289778, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.028578013
       objectReference: {fileID: 0}
     - target: {fileID: 7874263591242289778, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.008846162
       objectReference: {fileID: 0}
     - target: {fileID: 7874263591242289778, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.30552906
+      value: 0.2955692
       objectReference: {fileID: 0}
     - target: {fileID: 7874263591242289778, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 2.828
       objectReference: {fileID: 0}
     - target: {fileID: 7874263591242289778, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 1.939
       objectReference: {fileID: 0}
     - target: {fileID: 7874263591242289778, guid: db23dbbe8147a32438bbf3f233cbe42b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 35.58
+      value: 34.447
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

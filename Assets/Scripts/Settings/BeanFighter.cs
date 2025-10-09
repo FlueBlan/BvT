@@ -28,7 +28,7 @@ public class BeanFighter : MonoBehaviour
         if (direction != Vector3.zero)
         {
             Quaternion lookRotation = Quaternion.LookRotation(direction);
-            lookRotation *= Quaternion.Euler(0f, 90f, 0f); // Adjust for orientation
+            lookRotation *= Quaternion.Euler(0f, 180f, 0f); // Adjust for orientation
             transform.rotation = lookRotation;
         }
 
