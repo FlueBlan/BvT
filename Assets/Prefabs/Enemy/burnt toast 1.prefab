@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4eb05e9452e65945b94ff68a6b5b9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 275
   reward: 50
   deathEffect: {fileID: 0}
 --- !u!114 &2753018923897961857

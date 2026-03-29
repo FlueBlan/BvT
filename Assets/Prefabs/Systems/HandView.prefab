@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sc: {fileID: 3452219053794594622}
+  cardSpacing: 0.1
+  maxHandSize: 7
 --- !u!1 &4899326626534448215
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,14 @@ public class HandView : MonoBehaviour
     [SerializeField] private SplineContainer sc;
     [SerializeField] private float cardSpacing = 1f / 4f;
     private readonly List<CardView> cards = new();
+    [SerializeField] private int maxHandSize = 7;
     public IEnumerator AddCard(CardView carVe)
     {
+        if (cards.Count >= maxHandSize)
+        {
+            Destroy(carVe.gameObject);
+            yield break;
+        }
         cards.Add(carVe);
         yield return UpdateCardPositions(0.15f);
     }

@@ -145,7 +145,7 @@ public class MainMenuManager : MonoBehaviour
 
         // Step 8: Fade to black before loading next scene
         yield return StartCoroutine(FadeInBlack(1f));
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("CoreScene");
     }
 
     private void OnVideoFinished(VideoPlayer vp)
