@@ -31,6 +31,11 @@ public class WaveSpawner_Level3 : MonoBehaviour
 
     public int CurrentWaveIndex => currentWave;
     public bool IsWaveInProgress => waveInProgress;
+    public int CurrentWave => waveNumber;
+    public bool IsSpawning => countdown <= 0f && waveNumber <= maxWaves;
+    private bool isInBreak = false;
+    [SerializeField] private float breakTime = 5f;
+    private float breakCountdown = 0f;
 
     void Awake()
     {
@@ -39,16 +44,26 @@ public class WaveSpawner_Level3 : MonoBehaviour
 
     void Update()
     {
+        // Check if the game is paused or if time scale is zero
         if (PauseManager2.IsPaused || Time.timeScale == 0f) return;
 
+        if (isInBreak)
+        {
+            breakCountdown -= Time.deltaTime;
+            if (breakCountdown <= 0f)
+                EndBreakAndStartWave();
+            return;
+        }
+        // Check if it's the final wave and it that wave has been done
         if (finalWaveSpawned && !levelEnded && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             EndLevel();
             return;
         }
-
+        // Stops spawning new waves after maxWaves is reached
         if (waveNumber > maxWaves) return;
 
+        //Uses a countdown before spawning new waves
         if (countdown <= 0f && !waveInProgress)
         {
             StartCoroutine(SpawnWaveRoutine());
@@ -74,6 +89,7 @@ public class WaveSpawner_Level3 : MonoBehaviour
 
         int totalEnemiesThisWave = GetEnemyCountForWave(waveNumber);
 
+        // Position Calculation for spawning enemies
         for (int i = 0; i < totalEnemiesThisWave; i++)
         {
             int row = i / enemiesPerRow;
@@ -95,8 +111,10 @@ public class WaveSpawner_Level3 : MonoBehaviour
             }
         }
 
+        // Checks if it's the final wave and burnt toast haven't spawned yet
         if (waveNumber == maxWaves && !burntToastSpawned)
         {
+            // Same logic as regular wave, but has burnt toast
             float spawnX = spawnPoint.position.x + 5f;
             float spawnZ = spacingZ;
             float spawnY = 5f;
@@ -116,18 +134,20 @@ public class WaveSpawner_Level3 : MonoBehaviour
             Debug.Log("Burnt Toast spawned in final wave!");
         }
 
+        // Wave is spawned, increment wave number, move on to the next wave
         currentWave = waveNumber;
         waveNumber++;
 
-        if (waveNumber > maxWaves)
-        {
-            finalWaveSpawned = true;
-        }
+        //Debugging, add in later
+        //if (waveNumber > maxWaves)
+        //    finalWaveSpawned = true;
 
         yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("Enemy").Length == 0);
         waveInProgress = false;
+        StartBreak();
     }
 
+    //UI for ending the level
     void EndLevel()
     {
         levelEnded = true;
@@ -142,6 +162,7 @@ public class WaveSpawner_Level3 : MonoBehaviour
         }
     }
 
+    // Resets everything to be replayed. Might need tweaking later
     public void ResetSpawner()
     {
         waveNumber = 1;
@@ -154,6 +175,60 @@ public class WaveSpawner_Level3 : MonoBehaviour
         enabled = true;
     }
 
-    public int CurrentWave => waveNumber;
-    public bool IsSpawning => countdown <= 0f && waveNumber <= maxWaves;
+    void StartBreak()
+    {
+        isInBreak = true;
+        breakCountdown = breakTime;
+    }
+    public void SkipBreak()
+    {
+        EndBreakAndStartWave();
+    }
+    void EndBreakAndStartWave()
+    {
+        isInBreak = false;
+        countdown = 0f;
+    }
+    #region UI Debugging
+    //Debugging properties
+    public void SpawnToastCheat()
+    {
+        // Use the same logic as the first enemy in a wave
+        int row = 0;
+        int column = 0;
+
+        float spawnX = spawnPoint.position.x - (row * spacingX);
+        float spawnZ = 0 + (column * spacingZ);
+        float spawnY = 0f;
+
+        Vector3 spawnPos = new Vector3(spawnX, spawnY, spawnZ);
+        Vector3 targetPos = new Vector3(endPoint.position.x - (row * spacingX), spawnY, spawnZ);
+
+        GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+
+        EnemyMovement moveScript = enemy.GetComponent<EnemyMovement>();
+        if (moveScript != null)
+            moveScript.SetTarget(targetPos);
+    }
+
+    public void SpawnBurntToastCheat()
+    {
+        // Use the same logic as the first enemy in a wave
+        int row = 0;
+        int column = 0;
+
+        float spawnX = spawnPoint.position.x - (row * spacingX);
+        float spawnZ = 0 + (column * spacingZ);
+        float spawnY = 10f;
+
+        Vector3 spawnPos = new Vector3(spawnX, spawnY, spawnZ);
+        Vector3 targetPos = new Vector3(endPoint.position.x - (row * spacingX), spawnY, spawnZ);
+
+        GameObject enemy = Instantiate(burntToastPrefab, spawnPos, Quaternion.Euler(0, 180, 0));
+
+        EnemyMovement moveScript = enemy.GetComponent<EnemyMovement>();
+        if (moveScript != null)
+            moveScript.SetTarget(targetPos);
+    }
+    #endregion
 }

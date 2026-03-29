@@ -6,11 +6,11 @@ using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static int Money;
-    public int StartMoney = 200;
+    public static float Money;
+    public float StartMoney = 200;
 
-    public static int Lives = 5;
-    public int startLives = 5;
+    public static int Lives = 500;
+    public int startLives = 500;
     public GameObject gameOverBackground; 
     public TextMeshProUGUI countdownText; // Assign in inspector
 
@@ -58,8 +58,8 @@ public class PlayerStats : MonoBehaviour
     {
         StartCoroutine(RestartAfterDelay());
        
-        PlayerStats.Lives = 5;
-        PlayerStats.Money = 200;
+        PlayerStats.Lives = 20;
+        PlayerStats.Money = 150;
 
         // Reactivate or reset your spawner
         WaveSpawner spawner = FindAnyObjectByType<WaveSpawner>();
@@ -105,8 +105,8 @@ public class PlayerStats : MonoBehaviour
         }
 
         Time.timeScale = 1f;
-        PlayerStats.Lives = 5;
-        PlayerStats.Money = 400;
+        PlayerStats.Lives = 20;
+        PlayerStats.Money = 150;
 
         WaveSpawner spawner = Object.FindAnyObjectByType<WaveSpawner>();
 
@@ -145,6 +145,12 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine(RestartAfterDelay());
     }
 
+    //Debugging, remove later
+    public void AddMoneyNow(float amount)
+    {
+        Money += amount;
+        Debug.Log($"Money added: {amount}. Total Money: {Money}");
+    }
     public void OnMenuButtonPressed()
     {
         GoToMainMenu();

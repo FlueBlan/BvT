@@ -1,40 +1,16 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : BaseEnemyHealth
 {
-    public float health = 100f;
-    public GameObject deathEffect;
-    public AudioClip deathSFX;
-
-    public void TakeDamage(float damage)
+    private BaseEnemyHealth beh;
+    
+    void Awake()
     {
-        Debug.Log($"{gameObject.name} took {damage} damage. Remaining: {health - damage}");
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Die();
-        }
+        beh = GetComponent<BaseEnemyHealth>();
     }
-
-    void Die()
+    protected override void Die()
     {
-        PlayerStats.Money += 25;
-
-        // Play death sound
-        if (deathSFX != null)
-        {
-            SoundManager.instance.PlaySound(deathSFX);
-        }
-
-        // Visual effect
-        if (deathEffect != null)
-        {
-            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 5f);
-            FindFirstObjectByType<TutorialManager>()?.OnToastDefeated();
-        }
-
-        Destroy(gameObject);
+        base.Die();
+        FindFirstObjectByType<TutorialManager>()?.OnToastDefeated();
     }
 }

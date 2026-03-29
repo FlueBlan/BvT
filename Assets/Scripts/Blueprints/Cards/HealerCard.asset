@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f1876be4ad18847a6221df583b90ec, type: 3}
+  m_Name: HealerCard
+  m_EditorClassIdentifier: 
+  <Cost>k__BackingField: 150
+  <Image>k__BackingField: {fileID: 21300000, guid: c1d647e7b5970ee48817b213508be372, type: 3}
+  <beanPrefab>k__BackingField: {fileID: 11400000, guid: 0795e882aee512e49a6015409b87722e, type: 2}

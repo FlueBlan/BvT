@@ -53,8 +53,8 @@ MonoBehaviour:
       - rid: 6852985685364965393
       - rid: 6852985685364965394
       - rid: 8712630790384254976
-      - rid: 8643455094198108160
-      - rid: 8643455094198108161
+      - rid: 8131686262591455232
+      - rid: 8131686262591455233
     m_RuntimeSettings:
       m_List:
       - rid: 6852985685364965378
@@ -66,7 +66,7 @@ MonoBehaviour:
       - rid: 6852985685364965392
       - rid: 6852985685364965394
       - rid: 8712630790384254976
-      - rid: 8643455094198108161
+      - rid: 8131686262591455233
   m_AssetVersion: 8
   m_ObsoleteDefaultVolumeProfile: {fileID: 0}
   m_RenderingLayerNames:
@@ -257,11 +257,11 @@ MonoBehaviour:
         m_version: 0
         m_EnableCompilationCaching: 1
         m_EnableValidityChecks: 1
-    - rid: 8643455094198108160
+    - rid: 8131686262591455232
       type: {class: UniversalRenderPipelineEditorAssets, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.Runtime}
       data:
         m_DefaultSettingsVolumeProfile: {fileID: 11400000, guid: eda47df5b85f4f249abf7abd73db2cb2, type: 2}
-    - rid: 8643455094198108161
+    - rid: 8131686262591455233
       type: {class: UniversalRenderPipelineRuntimeXRResources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.Runtime}
       data:
         m_xrOcclusionMeshPS: {fileID: 4800000, guid: 4431b1f1f743fbf4eb310a967890cbea, type: 3}

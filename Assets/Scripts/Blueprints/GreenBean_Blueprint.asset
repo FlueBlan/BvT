@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8812739407387200500, guid: ac82983de90a3e848accb7a60fd5bfd8, type: 3}
   cost: 150
-  spawnOffset: {x: 0, y: 10, z: 0}
+  spawnOffset: {x: 0, y: 0.5, z: 0}
   rotationEuler: {x: -90, y: 90, z: 0}

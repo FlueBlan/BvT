@@ -21,7 +21,7 @@ public class WaveTimer : MonoBehaviour
             // Wait if globally paused
             yield return new WaitUntil(() => !PauseManager2.IsPaused);
 
-            waveCountdownText.text = GetRandomWaveMessage();
+            //waveCountdownText.text = GetRandomWaveMessage();
 
             float timer = 0f;
             while (timer < timeBetweenWaves)
@@ -34,19 +34,15 @@ public class WaveTimer : MonoBehaviour
 
             currentWave++;
 
-            if (currentWave == totalWaves)
-            {
-                waveCountdownText.text = "Final Wave!";
-                yield return new WaitForSeconds(7f);
-                waveCountdownText.text = "";
-            }
-            else
-            {
-                waveCountdownText.text = "";
-            }
+            //if (currentWave == totalWaves)
+            //{
+                //waveCountdownText.text = "Final Wave!";
+                //yield return new WaitForSeconds(7f);
+                //waveCountdownText.text = "";
+            //}
         }
 
-        waveCountdownText.text = "All Waves Complete!";
+        //waveCountdownText.text = "All Waves Complete!";
     }
 
     string GetRandomWaveMessage()

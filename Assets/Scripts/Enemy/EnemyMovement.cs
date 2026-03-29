@@ -4,22 +4,16 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed = 2f;
-    public float damageAmount = 25f;  // Set your damage here
+    public bool isAttacking { get; set; }
     private Vector3 targetPosition;
     private bool hasTarget = false;
     private float fixedY;
-
-    private bool isAttacking = false;
-    private Coroutine attackCoroutine;
     private AudioSource audioSource;
 
     void Start()
     {
         fixedY = transform.position.y;
-        
     }
-
-  
 
     void Update()
     {
@@ -45,68 +39,5 @@ public class EnemyMovement : MonoBehaviour
         targetPosition = position;
         hasTarget = true;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Bean"))
-        {
-            Health beanHealth = other.GetComponent<Health>();
-            if (beanHealth != null)
-            {
-                StartAttacking(other.gameObject);
-            }
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Bean") && !isAttacking)
-        {
-            StartAttacking(other.gameObject);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Bean"))
-        {
-            StopAttacking();
-        }
-    }
-
-    void StartAttacking(GameObject bean)
-    {
-        isAttacking = true;
-        attackCoroutine = StartCoroutine(AttackRoutine(bean));
-    }
-
-    void StopAttacking()
-    {
-        if (attackCoroutine != null)
-        {
-            StopCoroutine(attackCoroutine);
-        }
-
-        isAttacking = false;
-    }
-
-    public AudioClip attackSound; // assign in Inspector
-
-    IEnumerator AttackRoutine(GameObject bean)
-    {
-        Health beanHealth = bean.GetComponent<Health>();
-
-        while (bean != null && beanHealth != null && beanHealth.currentHealth > 0)
-        {
-            if (attackSound != null)
-                SoundManager.instance.PlaySound(attackSound);
-
-            beanHealth.TakeDamage(damageAmount);
-            yield return new WaitForSeconds(1f);
-        }
-
-        isAttacking = false;
-    }
-
 
 }

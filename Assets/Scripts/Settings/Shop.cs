@@ -13,6 +13,7 @@ public class Shop : MonoBehaviour
 
     private BuildManager buildManager;
 
+    // Script only incorporates the UI for the shop and calls the BuildManager, not handling the currency or purchasing logic directly.
     void Start()
     {
         buildManager = BuildManager.instance;
@@ -21,28 +22,28 @@ public class Shop : MonoBehaviour
     public void SelectWizardBean()
     {
         Debug.Log("Wizard Bean Selected");
-        buildManager.SelectBeanToBuild(wizardbean);
+        buildManager.SelectBeanToBuild(wizardbean, null);
         PlaySelectSound();
     }
 
     public void SelectBuffBean()
     {
         Debug.Log("Buff Bean Selected");
-        buildManager.SelectBeanToBuild(fighterbean);
+        buildManager.SelectBeanToBuild(fighterbean, null);
         PlaySelectSound();
     }
 
     public void SelectGreenBean()
     {
         Debug.Log("Green Bean Selected");
-        buildManager.SelectBeanToBuild(greenbean);
+        buildManager.SelectBeanToBuild(greenbean, null);
         PlaySelectSound();
     }
 
     public void SelectPopcornBomb()
     {
         Debug.Log("Popcorn Bomb Selected");
-        buildManager.SelectBeanToBuild(popcornBomb);
+        buildManager.SelectBeanToBuild(popcornBomb, null);
         PlaySelectSound();
     }
 

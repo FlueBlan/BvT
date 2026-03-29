@@ -7,7 +7,7 @@ public class BeanFighter : MonoBehaviour
     public string enemyTag = "Enemy";  // Tag for the enemy
     public float attackCooldown = 5f; // Time between attacks
     private float lastAttackTime = 0f; // Time of the last attack
-    public AudioClip punchSound;
+    //public AudioClip punchSound;
 
     private Transform target;
     private float fixedY;
@@ -28,7 +28,7 @@ public class BeanFighter : MonoBehaviour
         if (direction != Vector3.zero)
         {
             Quaternion lookRotation = Quaternion.LookRotation(direction);
-            lookRotation *= Quaternion.Euler(0f, 90f, 0f); // Adjust for orientation
+            lookRotation *= Quaternion.Euler(0f, 180f, 0f); // Adjust for orientation
             transform.rotation = lookRotation;
         }
 
@@ -36,11 +36,11 @@ public class BeanFighter : MonoBehaviour
         float distance = Vector3.Distance(transform.position, target.position);
         if (distance <= attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
-            SoundManager.instance.PlaySound(punchSound);
+            //SoundManager.instance.PlaySound(punchSound);
             // Attack the enemy
-            EnemyHealth targetHealth = target.GetComponent<EnemyHealth>()
-                                     ?? target.GetComponentInParent<EnemyHealth>()
-                                     ?? target.GetComponentInChildren<EnemyHealth>();
+            BaseEnemyHealth targetHealth = target.GetComponent<BaseEnemyHealth>()
+                                     ?? target.GetComponentInParent<BaseEnemyHealth>()
+                                     ?? target.GetComponentInChildren<BaseEnemyHealth>();
 
             if (targetHealth != null)
             {

@@ -50,7 +50,7 @@ public class Orb : MonoBehaviour
             Debug.Log("Hit target: " + target.name);
             
             // Try getting EnemyHealth from the target or its parent
-            EnemyHealth enemyHealth = target.GetComponent<EnemyHealth>() ?? target.GetComponentInParent<EnemyHealth>();
+            BaseEnemyHealth enemyHealth = target.GetComponent<BaseEnemyHealth>() ?? target.GetComponentInParent<BaseEnemyHealth>();
 
             if (enemyHealth != null)
             {

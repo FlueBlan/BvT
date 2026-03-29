@@ -39,6 +39,7 @@ public class MainMenuManager : MonoBehaviour
     {
         FindReferences();
         SetupStartButton();
+        SetupQuitButton();
 
         if (cinematicCanvas != null)
             cinematicCanvas.gameObject.SetActive(false);
@@ -66,6 +67,20 @@ public class MainMenuManager : MonoBehaviour
         {
             startButton.onClick.RemoveAllListeners();
             startButton.onClick.AddListener(StartGame);
+        }
+    }
+
+    private void SetupQuitButton()
+    {
+        Button[] buttons = mainMenuPanel?.GetComponentsInChildren<Button>();
+
+        foreach (Button btn in buttons)
+        {
+            if (btn.name == "QuitButton")
+            {
+                btn.onClick.RemoveAllListeners();
+                btn.onClick.AddListener(QuitGame);
+            }
         }
     }
 
@@ -128,9 +143,6 @@ public class MainMenuManager : MonoBehaviour
         if (cinematicCanvas != null)
             cinematicCanvas.gameObject.SetActive(false);
 
-        if (cinematicCanvas != null)
-            cinematicCanvas.gameObject.SetActive(false);
-
         // Resume music *after* cinematic but *before* dialogue
         if (menuMusic != null)
             menuMusic.Play();
@@ -145,7 +157,7 @@ public class MainMenuManager : MonoBehaviour
 
         // Step 8: Fade to black before loading next scene
         yield return StartCoroutine(FadeInBlack(1f));
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("CoreScene");
     }
 
     private void OnVideoFinished(VideoPlayer vp)
@@ -195,6 +207,12 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "MainMenu")
@@ -203,6 +221,7 @@ public class MainMenuManager : MonoBehaviour
             if (mainMenuPanel != null)
                 mainMenuPanel.SetActive(true);
             SetupStartButton();
+            SetupQuitButton();
         }
     }
 }
