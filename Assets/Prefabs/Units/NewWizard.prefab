@@ -40,9 +40,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5795436189780195408}
     m_Modifications:
+    - target: {fileID: 2131672272801670134, guid: 97efa553f983a504abe1bfb324686a81, type: 3}
+      propertyPath: damage
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3895796910461086525, guid: 97efa553f983a504abe1bfb324686a81, type: 3}
       propertyPath: m_Name
       value: NewWizardPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895796910461086525, guid: 97efa553f983a504abe1bfb324686a81, type: 3}
+      propertyPath: m_TagString
+      value: Bean
       objectReference: {fileID: 0}
     - target: {fileID: 4421257247463092615, guid: 97efa553f983a504abe1bfb324686a81, type: 3}
       propertyPath: m_LocalPosition.x

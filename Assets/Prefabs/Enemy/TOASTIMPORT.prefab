@@ -209,7 +209,7 @@ MonoBehaviour:
   health: 100
   reward: 25
   deathEffect: {fileID: 0}
-  deathSFX: {fileID: 0}
+  deathSFX: {fileID: 8300000, guid: 9657b4cf8371fb94d8b7d3dc28a7070e, type: 3}
 --- !u!114 &5864893967020472218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   health: 100
   reward: 25
   deathEffect: {fileID: 0}
-  deathSFX: {fileID: 0}
+  deathSFX: {fileID: 8300000, guid: 9657b4cf8371fb94d8b7d3dc28a7070e, type: 3}
 --- !u!23 &7833257906332067311 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -4683669308469848369, guid: 71e048aae592a5449adbbc5df0793fe2, type: 3}

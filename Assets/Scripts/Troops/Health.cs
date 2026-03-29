@@ -4,7 +4,7 @@ public class Health : MonoBehaviour
 {
     public float maxHealth = 100f;  // Maximum health
     public float currentHealth;     // Current health
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
 
 
     void Start()
@@ -34,12 +34,12 @@ public class Health : MonoBehaviour
     }
 
     // Method to handle death
-    public AudioClip deathSound; // assign in Inspector
+    //public AudioClip deathSound; // assign in Inspector
 
     private void Die()
     {
-        if (deathSound != null)
-            SoundManager.instance.PlaySound(deathSound); 
+        //if (deathSound != null)
+            //SoundManager.instance.PlaySound(deathSound); 
 
         Debug.Log($"{gameObject.name} has died.");
         Destroy(gameObject);

@@ -4,9 +4,10 @@ using System.Collections;
 public class EnemyAttackHitbox : MonoBehaviour
 {
     public float damageAmount = 25f;
-    public AudioClip attackSound;
+    //public AudioClip attackSound;
     private Coroutine attackCoroutine;
     private EnemyMovement enemyMov; // Reference to parent
+    private GameObject currentBean;
 
     void Awake()
     {
@@ -17,11 +18,8 @@ public class EnemyAttackHitbox : MonoBehaviour
     {
         if (other.CompareTag("Bean"))
         {
-            Health beanHealth = other.GetComponent<Health>();
-            if (beanHealth != null)
-            {
-                StartAttacking(other.gameObject);
-            }
+            currentBean = other.gameObject;
+            StartAttacking();
         }
     }
 
@@ -29,22 +27,30 @@ public class EnemyAttackHitbox : MonoBehaviour
     {
         if (other.CompareTag("Bean") && !enemyMov.isAttacking)
         {
-            StartAttacking(other.gameObject);
+            currentBean = other.gameObject;
+            StartAttacking();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Bean"))
+        if (other.CompareTag("Bean") && other.gameObject == currentBean)
         {
             StopAttacking();
+            currentBean = null;
         }
     }
 
-    void StartAttacking(GameObject bean)
+    void StartAttacking()
     {
+        if (currentBean == null)
+            return;
+
+        if (enemyMov.isAttacking)
+            return;
+
         enemyMov.isAttacking = true;
-        attackCoroutine = StartCoroutine(AttackRoutine(bean));
+        attackCoroutine = StartCoroutine(AttackRoutine(currentBean));
     }
 
     void StopAttacking()
@@ -52,7 +58,9 @@ public class EnemyAttackHitbox : MonoBehaviour
         if (attackCoroutine != null)
         {
             StopCoroutine(attackCoroutine);
+            attackCoroutine = null;
         }
+
         enemyMov.isAttacking = false;
     }
 
@@ -62,8 +70,8 @@ public class EnemyAttackHitbox : MonoBehaviour
 
         while (bean != null && beanHealth != null && beanHealth.currentHealth > 0)
         {
-            if (attackSound != null)
-                SoundManager.instance.PlaySound(attackSound);
+            //if (attackSound != null && SoundManager.instance != null)
+                //SoundManager.instance.PlaySound(attackSound);
 
             beanHealth.TakeDamage(damageAmount);
             yield return new WaitForSeconds(1f);

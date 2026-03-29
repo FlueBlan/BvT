@@ -5,7 +5,7 @@ public class BaseEnemyHealth : MonoBehaviour
     [SerializeField] private float health = 100f;
     public float reward = 25f;
     public GameObject deathEffect;
-    public AudioClip deathSFX;
+    //public AudioClip deathSFX;
     private DamageFlash df;
     void Awake()
     {
@@ -27,8 +27,8 @@ public class BaseEnemyHealth : MonoBehaviour
         PlayerStats.Money += reward;
 
         // Play death sound
-        if (deathSFX != null)
-            SoundManager.instance.PlaySound(deathSFX);
+        //if (deathSFX != null)
+            //SoundManager.instance.PlaySound(deathSFX);
 
         // Visual effect
         if (deathEffect != null)

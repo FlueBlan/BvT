@@ -9,8 +9,8 @@ public class PlayerStats : MonoBehaviour
     public static float Money;
     public float StartMoney = 200;
 
-    public static int Lives = 5;
-    public int startLives = 5;
+    public static int Lives = 500;
+    public int startLives = 500;
     public GameObject gameOverBackground; 
     public TextMeshProUGUI countdownText; // Assign in inspector
 

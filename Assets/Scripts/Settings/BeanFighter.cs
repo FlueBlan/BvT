@@ -7,7 +7,7 @@ public class BeanFighter : MonoBehaviour
     public string enemyTag = "Enemy";  // Tag for the enemy
     public float attackCooldown = 5f; // Time between attacks
     private float lastAttackTime = 0f; // Time of the last attack
-    public AudioClip punchSound;
+    //public AudioClip punchSound;
 
     private Transform target;
     private float fixedY;
@@ -36,7 +36,7 @@ public class BeanFighter : MonoBehaviour
         float distance = Vector3.Distance(transform.position, target.position);
         if (distance <= attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
-            SoundManager.instance.PlaySound(punchSound);
+            //SoundManager.instance.PlaySound(punchSound);
             // Attack the enemy
             BaseEnemyHealth targetHealth = target.GetComponent<BaseEnemyHealth>()
                                      ?? target.GetComponentInParent<BaseEnemyHealth>()

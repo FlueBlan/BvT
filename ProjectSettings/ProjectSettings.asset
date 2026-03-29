@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 5863850d5e0cb544f918bfff920cf69e
+  productGUID: afc706a473fd49244a4d34f5b1a40516
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: BvT
+  productName: BVT_LEVEL
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -141,8 +141,7 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1.0
-  preloadedAssets:
-  - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -855,14 +854,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: BvT
+  metroPackageName: BVT_LEVEL
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: BvT
+  metroApplicationDescription: BVT_LEVEL
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -933,10 +932,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: fc5b6e8a-8449-4701-8431-2b457088edd1
+  cloudProjectId: b6a65362-31f4-485b-8883-6737d013977b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: BvT
+  projectName: BVT_LEVEL
   organizationId: lawiwawi
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

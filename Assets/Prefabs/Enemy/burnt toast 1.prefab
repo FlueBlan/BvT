@@ -156,7 +156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5477749408508380018, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5477749408508380018, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ee72bb495ea909c4cad473405116b5d3, type: 3}
       propertyPath: m_Name
@@ -216,7 +220,6 @@ MonoBehaviour:
   health: 100
   reward: 25
   deathEffect: {fileID: 0}
-  deathSFX: {fileID: 0}
   shieldHealth: 150
 --- !u!65 &4380194225962217037
 BoxCollider:
@@ -282,7 +285,6 @@ MonoBehaviour:
   health: 200
   reward: 50
   deathEffect: {fileID: 0}
-  deathSFX: {fileID: 0}
 --- !u!114 &2753018923897961857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +300,6 @@ MonoBehaviour:
   health: 200
   reward: 50
   deathEffect: {fileID: 0}
-  deathSFX: {fileID: 0}
   shieldHealth: 150
 --- !u!4 &2038649222605635629 stripped
 Transform:
