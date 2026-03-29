@@ -122,6 +122,17 @@ public class WaveSpawner : MonoBehaviour
 
             GameObject enemy = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
 
+            BaseEnemyHealth health = enemy.GetComponent<BaseEnemyHealth>();
+
+            if (health != null)
+            {
+                float multiplier = GetDifficultyMultiplier(waveNumber);
+                float baseHealth = 100f;
+                health.SetHealth(baseHealth * multiplier);
+
+                health.reward *= multiplier;
+            }
+
             EnemyMovement moveScript = enemy.GetComponent<EnemyMovement>();
             if (moveScript != null)
             {
@@ -163,6 +174,14 @@ public class WaveSpawner : MonoBehaviour
         yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("Enemy").Length == 0);
         waveInProgress = false;
         StartBreak();
+    }
+
+    float GetDifficultyMultiplier(int wave)
+    {
+        float baseMultiplier = 1f;
+        float growthRate = 0.05f; // tweakler
+
+        return baseMultiplier + (wave * growthRate);
     }
 
     float GetBurntToastChance(int wave)

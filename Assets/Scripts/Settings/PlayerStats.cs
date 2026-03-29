@@ -58,8 +58,8 @@ public class PlayerStats : MonoBehaviour
     {
         StartCoroutine(RestartAfterDelay());
        
-        PlayerStats.Lives = 5;
-        PlayerStats.Money = 200;
+        PlayerStats.Lives = 20;
+        PlayerStats.Money = 150;
 
         // Reactivate or reset your spawner
         WaveSpawner spawner = FindAnyObjectByType<WaveSpawner>();
@@ -105,8 +105,8 @@ public class PlayerStats : MonoBehaviour
         }
 
         Time.timeScale = 1f;
-        PlayerStats.Lives = 5;
-        PlayerStats.Money = 400;
+        PlayerStats.Lives = 20;
+        PlayerStats.Money = 150;
 
         WaveSpawner spawner = Object.FindAnyObjectByType<WaveSpawner>();
 

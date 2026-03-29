@@ -2,26 +2,40 @@ using UnityEngine;
 
 public class BaseEnemyHealth : MonoBehaviour
 {
-    [SerializeField] private float health = 100f;
+    [SerializeField] private float maxHealth = 100f;
+    private float currentHealth;
+
     public float reward = 25f;
     public GameObject deathEffect;
+
     //public AudioClip deathSFX;
     private DamageFlash df;
+
     void Awake()
     {
+        currentHealth = maxHealth;
         df = GetComponent<DamageFlash>();
     }
+
     public virtual void TakeDamage(float damage)
     {
-        Debug.Log($"{gameObject.name} took {damage} damage. Remaining: {health - damage}");
-        health -= damage;
+        currentHealth -= damage;
         df.Flash();
 
-        if (health <= 0)
+        Debug.Log($"{gameObject.name} took {damage} damage. Remaining: {currentHealth}");
+
+        if (currentHealth <= 0)
         {
             Die();
         }
     }
+
+    public void SetHealth(float newHealth)
+    {
+        maxHealth = newHealth;
+        currentHealth = maxHealth;
+    }
+
     protected virtual void Die()
     {
         PlayerStats.Money += reward;
